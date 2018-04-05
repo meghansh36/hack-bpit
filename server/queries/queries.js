@@ -7,34 +7,35 @@ const express = require('express')
 var app = express()
 
 function bloodGroup(bg) {
-    if(bg == 'O' || bg == 'O-' || bg == "O+"){
+    if(bg == 'O'){
         return ['O', 'A', 'B', 'AB']
     }
-    if(bg == 'A' || bg == 'A+' || bg == 'A-'){
+    if(bg == 'A'){
         return ['A', 'AB']
     }
-    if(bg == 'B' || bg == 'B+' || bg == 'B-'){
+    if(bg == 'B'){
         return ['B','AB']
     }
-    if(bg == 'AB' || bg == 'AB+' || bg == 'AB-'){
+    if(bg == 'AB'){
         return ['AB']
     }
 }
 
-var organArray = ['heart','kidney','liver']
+var organArray = ['heart','kidney', 'liver']
 
 function potential (req,res,next){
-
+console.log(req.body)
 Donor.findOne({
-    _id: '5ac522da5803514e0fe18d80',
+    _id: req.body.donor_id,
     "organs.organ_name" : {$all: organArray} 
 
 }).then((organInfo) => {
     if(!organInfo)
-    {Promise.reject()}
+    {console.log('checking checking')}
 
     return organInfo;
 }).then((organInfo) => {
+    console.log(organInfo)
     Patient.find({
         organ_needed: {
             $in: organArray

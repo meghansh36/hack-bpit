@@ -110,7 +110,7 @@ app.post("/search", potential, (req,res,next) => {
     var locationDist = []
     if(req.potential){
        
-        Donor.findById('5ac522da5803514e0fe18d80').then((doc) => {
+        Donor.findById(req.body.donor_id).then((doc) => {
             return doc.address
         }).then((address) => {
             // asyncLoop(req.potential, function(item,next){
@@ -131,7 +131,7 @@ app.post("/search", potential, (req,res,next) => {
                     console.log('in loop',req.potential[i])
                     axios({
                         method: 'GET',
-                        url: "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+address+"&destinations="+"Inderpuri"+"&key="+" AIzaSyDh7EfaiJ1qcPph3TH8bTQTojBn6oiblFI",
+                        url: "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+address+"&destinations="+req.potential[i].address+"&key="+" AIzaSyDh7EfaiJ1qcPph3TH8bTQTojBn6oiblFI",
                         responseType: "json"
                     }).then((response) => {
                         var time = response.data.rows[0].elements[0].duration.value

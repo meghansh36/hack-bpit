@@ -54,7 +54,11 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	<style>
+		.hidden {
+			display: none
+		}
+	</style>
 	</head>
 	<body>
 		
@@ -79,14 +83,14 @@
 
 			<h4>Select your gender</h4>  
 			  <div class="form-check">
-				<input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="M" checked>
-				<label class="form-check-label" for="exampleRadios1">
+				<input class="form-check-input" type="radio" name="gender" id="gender1" value="M" checked>
+				<label class="form-check-label" for="gender1">
 				  Male
 				</label>
 			  </div>
 			  <div class="form-check">
-				<input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="F">
-				<label class="form-check-label" for="exampleRadios2">
+				<input class="form-check-input" type="radio" name="gender" id="gender2" value="F">
+				<label class="form-check-label" for="gender2">
 				  Female
 				</label>
 			  </div>
@@ -109,24 +113,109 @@
 				</label>
 			  </div>
 			  <div class="form-check">
-				<input class="form-check-input" type="radio" name="organ" id="exampleRadios2" value="liver">
-				<label class="form-check-label" for="exampleRadios2">
+				<input class="form-check-input" type="radio" name="organ" id="exampleRadios3" value="liver">
+				<label class="form-check-label" for="exampleRadios3">
 				  liver
 				</label>
 				</div>
 				
-				<div class="hide active">
-					<div class="kidney">
+				<div class=" organ_list">
+						<div class="liver ">
+							<br><br>
+								<h4>Liver Organ Info</h4>
+								<div class="diabled form-group">
+									<label for="bp">Total Bilirubin</label>
+									<input type="text" class="form-control" id="bp" aria-describedby="emailHelp"  name="bp">
+									</div>
+									<div class="form-group">
+											<label for="sg">Direct Bilirubin</label>
+											<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"  name="sg">
+											</div>
+									<div class="form-group">
+											<label for="sg">Alkaline Phosphotase</label>
+											<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"  name="sg">
+											</div>
+											<div class="form-group">
+													<label for="sg">Alamine Aminotransferase</label>
+													<input type="text" class="form-control" id="sg" aria-describedby="emailHelp" name="sg">
+													</div>	
+											<div class="form-group">
+													<label for="sg">Aspartate Aminotransferase</label>
+													<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"  name="sg">
+													</div>
+											<div class="form-group">
+													<label for="sg">Total Proteins</label>
+													<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"  name="sg">
+													</div>
+													<div class="form-group">
+															<label for="sg">Albumin</label>
+															<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"  name="sg">
+															</div>							
+								</div>	
+					<div class="kidney ">
+						<br><br>
 					<h4>Kidney Organ Info</h4>
-					<div class="form-group">
-						<label for="bp">Blood pressure</label>
-						<input type="text" class="form-control" id="bp" aria-describedby="emailHelp" placeholder="Blood Group" name="bp">
+					<div class="diabled form-group">
+						<label for="bp">Blood pressure(mm/Hg)</label>
+						<input type="text" class="form-control" id="bp" aria-describedby="emailHelp"  name="bp">
 						</div>
 						<div class="form-group">
-								<label for="bp">Blood pressure</label>
-								<input type="text" class="form-control" id="bp" aria-describedby="emailHelp" placeholder="Blood Group" name="bp">
+								<label for="sg">Specific Gravity</label>
+								<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"  name="sg">
 								</div>
+						<div class="form-group">
+								<label for="sg">Albumin</label>
+								<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"  name="sg">
+								</div>
+								<div class="form-group">
+										<label for="sg">Sugar</label>
+										<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"  name="sg">
+										</div>	
+								<div class="form-group">
+										<label for="sg">Blood Glucose Random(mgs/dl)</label>
+										<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"  name="sg">
+										</div>
+								<div class="form-group">
+										<label for="sg">Pottasium(mEq/L)</label>
+										<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"  name="sg">
+										</div>
+										<div class="form-group">
+												<label for="sg">White Blood Cell count(cells/cumm)</label>
+												<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"    name="sg">
+												</div>							
 					</div>	
+					<div class="heart ">
+						<br><br>
+							<h4>Heart Organ Info</h4>
+							<div class="diabled form-group">
+								<label for="bp">Chest Pain Type</label>
+								<input type="text" class="form-control" id="bp" aria-describedby="emailHelp"    name="bp">
+								</div>
+								<div class="form-group">
+										<label for="sg">Resting Blood pressure</label>
+										<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"    name="sg">
+										</div>
+								<div class="form-group">
+										<label for="sg">Albumin</label>
+										<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"    name="sg">
+										</div>
+										<div class="form-group">
+												<label for="sg">Sugar</label>
+												<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"    name="sg">
+												</div>	
+										<div class="form-group">
+												<label for="sg">Blood Glucose Random(mgs/dl)</label>
+												<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"    name="sg">
+												</div>
+										<div class="form-group">
+												<label for="sg">Pottasium(mEq/L)</label>
+												<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"    name="sg">
+												</div>
+												<div class="form-group">
+														<label for="sg">White Blood Cell count(cells/cumm)</label>
+														<input type="text" class="form-control" id="sg" aria-describedby="emailHelp"    name="sg">
+														</div>							
+						          	</div>	
 				</div>
 
 			<button type="submit" class="btn btn-primary">Submit</button>
@@ -184,6 +273,44 @@
 			})
 		})
 	</script>
+
+	<script>
+$(document).ready(function(){
+
+	$('.liver').hide()
+	$('.heart').hide()
+	$('.kidney').hide()
+
+	$('#exampleRadios1').click(function(){
+		$('.liver').slideUp()
+		$('.heart').slideUp()
+
+		$('.kidney').slideDown(500);
+
+	});
+
+		$('#exampleRadios2').click(function(){
+		$('.liver').slideUp()
+		$('.kidney').slideUp()
+
+		$('.heart').slideDown(500);
+
+	});
+
+		$('#exampleRadios3').click(function(){
+		$('.kidney').slideUp()
+		$('.heart').slideUp()
+
+		$('.liver').slideDown(500);
+
+	});
+
+
+});
+
+
+	</script>
+
 
 	</body>
 </html>
