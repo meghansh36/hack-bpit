@@ -8,8 +8,10 @@ const {shelf} = require('./locals/shelf')
 var {potential} = require('./queries/queries')
 var asyncLoop = require('node-async-loop')
 const axios = require('axios')
+var hbs = require('handlebars')
 var app = express()
 
+app.set('view-engine', 'hbs')
 app.use(body_parser.json())
 app.use(body_parser.urlencoded({extended:true}))
 
